@@ -19,7 +19,7 @@ export default function ProjectItem({ name, desc, year, href = "#", delayMs, alw
       href={href} 
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
-      className={`group flex flex-col sm:flex-row sm:items-baseline justify-between py-5 border-b border-[#eee] dark:border-[#1a1a1a] last:border-none hover:pl-1 transition-all duration-300 ease-out ${isAnimated ? 'opacity-0 animate-[fade-in_1s_ease-out_forwards]' : ''}`}
+      className={`group flex flex-col sm:flex-row sm:items-baseline justify-between py-5 border-b border-[#eee] dark:border-[#1a1a1a] last:border-none hover:pl-1 active:opacity-50 transition-all duration-300 ease-out ${isAnimated ? 'opacity-0 animate-[fade-in_0.5s_ease-out_forwards]' : ''}`}
       style={isAnimated ? { animationDelay: `${delayMs}ms` } as CSSProperties : undefined}
     >
       <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4 lg:gap-6 flex-1 min-w-0 pr-4">

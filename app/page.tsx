@@ -6,9 +6,9 @@ import { projects } from "@/data/projects";
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#fcfcfc] dark:bg-[#050505] text-[#111] dark:text-[#ededed] font-sans selection:bg-zinc-200 dark:selection:bg-zinc-800">
-      <main className="max-w-2xl mx-auto px-6 py-12 sm:py-20 md:py-24 flex flex-col gap-16 sm:gap-24 animate-[fade-in_1s_ease-out_forwards]">
+      <main className="max-w-2xl mx-auto px-6 py-12 sm:py-20 md:py-24 flex flex-col gap-16 sm:gap-24">
         
-        <header className="flex flex-col gap-8">
+        <header className="flex flex-col gap-8 opacity-0 animate-[fade-in_0.5s_ease-out_forwards]">
           <SectionLabel>
             the last working build
           </SectionLabel>
@@ -21,28 +21,31 @@ export default function Home() {
         </header>
 
         <section className="flex flex-col gap-8">
-          <SectionLabel>
-            Selected Work
-          </SectionLabel>
+          <div className="opacity-0 animate-[fade-in_0.5s_ease-out_forwards]" style={{ animationDelay: '100ms' }}>
+            <SectionLabel>
+              Selected Work
+            </SectionLabel>
+          </div>
           
           <div className="flex flex-col">
-            {projects.filter(p => p.featured).map((project) => (
+            {projects.filter(p => p.featured).map((project, i) => (
               <ProjectItem 
                 key={project.name} 
                 href={project.href || "#"} 
                 name={project.name}
                 desc={project.desc}
                 year={project.year}
+                delayMs={100 + (i + 1) * 75}
               />
             ))}
           </div>
           
-          <Link href="/projects" className="text-sm font-medium text-[#777] hover:text-[#111] dark:hover:text-[#ededed] transition-colors self-start mt-4 underline decoration-[#ddd] dark:decoration-[#333] underline-offset-4 hover:decoration-[#111] dark:hover:decoration-[#ededed]">
+          <Link href="/projects" className="text-sm font-medium text-[#777] hover:text-[#111] dark:hover:text-[#ededed] active:opacity-50 transition-all self-start mt-4 underline decoration-[#ddd] dark:decoration-[#333] underline-offset-4 hover:decoration-[#111] dark:hover:decoration-[#ededed] opacity-0 animate-[fade-in_0.5s_ease-out_forwards]" style={{ animationDelay: '350ms' }}>
             View full archive ↗
           </Link>
         </section>
 
-        <footer className="flex flex-col gap-8">
+        <footer className="flex flex-col gap-8 opacity-0 animate-[fade-in_0.5s_ease-out_forwards]" style={{ animationDelay: '450ms' }}>
           <SectionLabel>
             Connect
           </SectionLabel>
