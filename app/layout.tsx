@@ -21,6 +21,9 @@ const pressStart2P = Press_Start_2P({
 export const metadata: Metadata = {
   title: "The Last Working Build",
   description: "Crafting interfaces. Building polished software and web experiences.",
+  icons: {
+    icon: "/tlwb.png",
+  },
 };
 
 export default function RootLayout({

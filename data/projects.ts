@@ -7,6 +7,6 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  { name: "Cascade", desc: "Hourly payments using stablcoins", year: "2025", featured: true, href: "https://cascade.tlwb.tech" },
+  { name: "Cascade", desc: "Hourly payments using stablecoins", year: "2025", featured: true, href: "https://cascade.tlwb.tech" },
   { name: "Autodocs", desc: "Generate docs for open source repos", year: "2026", featured: true, href: "" },
 ];
